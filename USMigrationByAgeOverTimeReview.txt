@@ -90,7 +90,7 @@ mtext(side=1,line=3.75,adj=0,text="from IPUMS-USA, University of Minnesota, www.
 ##########
 #Read in CPS mover data
 CPSTotalMovers<-read.table(file="https://raw.githubusercontent.com/edyhsgr/USMigrationByAgeOverTimeReview/master/DataFromIPUMSCPS/CPSMoversTotal_2001to2017.csv",header=TRUE,sep=",")
-CPSTotalTotal<-read.table(file=https://raw.githubusercontent.com/edyhsgr/USMigrationByAgeOverTimeReview/master/DataFromIPUMSCPS/CPSTotalTotal_2001to2017.csv",header=TRUE,sep=",")
+CPSTotalTotal<-read.table(file="https://raw.githubusercontent.com/edyhsgr/USMigrationByAgeOverTimeReview/master/DataFromIPUMSCPS/CPSTotalTotal_2001to2017.csv",header=TRUE,sep=",")
 
 #Age specific migration rates
 CPSTotalMoversRate<-array(0,c(86,19))
