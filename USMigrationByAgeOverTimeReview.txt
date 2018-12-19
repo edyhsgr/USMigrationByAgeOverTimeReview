@@ -71,7 +71,7 @@ ACS18to49MoverRatesMedianAge<-array(0,19)
 for (i in 1:length(ACS18to49MoverRatesMedianAge)) {ACS18to49MoverRatesMedianAge[i]<-medage(data.frame(ACSTotalMoversRate[19:50,i]),1)+18}
 plot(ACS18to49MoverRatesMedianAge[8:19],ylab="",xlab="",axes=F,type="l",lwd="3",col="orange",ylim=c(25,40),panel.first=c(abline(h=c(30,35),col="grey50",lty=3)))
 
-#Calculate and graph median age of 18 to 49 year old age specific migration rates
+#Calculate and graph median age of 18 to 79 year old age specific migration rates
 ACS18to79MoverRatesMedianAge<-array(0,19)
 for (i in 1:length(ACS18to79MoverRatesMedianAge)) {ACS18to79MoverRatesMedianAge[i]<-medage(data.frame(ACSTotalMoversRate[19:80,i]),1)+18}
 points(ACS18to79MoverRatesMedianAge[8:19],type="l",lwd="3",col="forestgreen")
@@ -118,7 +118,7 @@ CPS18to49MoverRatesMedianAge<-array(0,19)
 for (i in 1:length(CPS18to49MoverRatesMedianAge)) {CPS18to49MoverRatesMedianAge[i]<-medage(data.frame(CPSTotalMoversRate[19:50,i]),1)+18}
 plot(CPS18to49MoverRatesMedianAge[3:19],ylab="",xlab="",axes=F,type="l",lwd="3",col="orange",ylim=c(25,40),panel.first=c(abline(h=c(30,35),col="grey50",lty=3)))
 
-#Calculate and graph median age of 18 to 49 year old age specific migration rates
+#Calculate and graph median age of 18 to 79 year old age specific migration rates
 CPS18to79MoverRatesMedianAge<-array(0,19)
 for (i in 1:length(CPS18to79MoverRatesMedianAge)) {CPS18to79MoverRatesMedianAge[i]<-medage(data.frame(CPSTotalMoversRate[19:80,i]),1)+18}
 points(CPS18to79MoverRatesMedianAge[3:19],type="l",lwd="3",col="forestgreen")
