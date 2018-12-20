@@ -82,7 +82,7 @@ legend(7,39,bg="white",legend=c("Ages 18 to 79", "Ages 18 to 49"),
 col=c("forestgreen","orange"), 
 lwd=c(3,3), cex=.7)
 mtext(side=1,line=2.5,adj=.5,text="Year",font=1,cex=.75,col="black")
-mtext(side=1,line=-13,adj=.5,text="(Age-Adjusted, Using 2017 Standard.)",font=1,cex=.6,col="black")
+mtext(side=1,line=-13,adj=.5,text="(Age-Adjusted, Using 2017 Standard)",font=1,cex=.6,col="black")
 mtext(side=2,line=2.5,adj=.5,text="Median Age of Moved in Last Year",font=1,cex=.75,col="black")
 mtext(side=1,line=3.25,adj=0,text="Using US Census Bureau American Community Survey data",font=1,cex=.5,col="black")
 mtext(side=1,line=3.75,adj=0,text="from IPUMS-USA, University of Minnesota, www.ipums.org.",font=1,cex=.5,col="black")
@@ -130,7 +130,7 @@ legend(10,39,bg="white",legend=c("Ages 18 to 79", "Ages 18 to 49"),
 col=c("forestgreen","orange"), 
 lwd=c(3,3), cex=.7)
 mtext(side=1,line=2.5,adj=.5,text="Year",font=1,cex=.75,col="black")
-mtext(side=1,line=-13,adj=.5,text="(Age-Adjusted, Using 2017 Standard.)",font=1,cex=.6,col="black")
+mtext(side=1,line=-13,adj=.5,text="(Age-Adjusted, Using 2017 Standard)",font=1,cex=.6,col="black")
 mtext(side=2,line=2.5,adj=.5,text="Median Age of Moved in Last Year",font=1,cex=.75,col="black")
 mtext(side=1,line=3.25,adj=0,text="Using US Bureau of Labor Statistics Current Population Survey data",font=1,cex=.5,col="black")
 mtext(side=1,line=3.75,adj=0,text="from IPUMS-USA, University of Minnesota, www.ipums.org.",font=1,cex=.5,col="black")
