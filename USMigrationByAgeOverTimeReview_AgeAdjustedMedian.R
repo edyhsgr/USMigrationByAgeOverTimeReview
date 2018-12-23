@@ -11,27 +11,9 @@
 ##############################################################################################################################
 
 ##########
-#R CODE TO CALCULATE THE MEDIAN AGE FOR A GIVEN AGE PROFILE
-#EDDIE HUNSINGER, 2008
+#CALCULATE THE MEDIAN AGE FOR A GIVEN AGE PROFILE (EDDIE HUNSINGER, 2008)
 #http://www.demog.berkeley.edu/~eddieh/toolbox.html#MedianAge 
-medage<-function(agegroups,agesize)
-{
-cat<-cumsum(agegroups)
-fish<-((cat[length(agegroups[,]),1]))/2
-foot<-t(agegroups)
-foot<-array(0,length(foot))
-hand<-foot
-for (i in 2:length(foot)){if(cat[i,1]>fish) {foot[i]<-cat[i-1,1]}}
-for (i in 2:length(hand)){if(cumsum(foot[i-1])==0) {hand[i]<-foot[i]}}
-leg<-seq(0,length(agegroups[,]),1)
-arm<-array(0,length(foot))
-for (i in 2:length(hand)){if(hand[i]!=0) {arm[i]<-leg[i]}}
-head<-array(0,length(foot))
-for (i in 2:length(hand)){if(arm[i]!=0) {head[i]<-agegroups[i,1]}}
-air<-fish-sum(hand)
-water<-(air/sum(head))+sum(arm)
-water*agesize
-}
+source("https://raw.githubusercontent.com/AppliedDemogToolbox/Hunsinger_MedianAge/master/MedianAge.R")
 ##########
 
 ##########
