@@ -11,8 +11,7 @@
 ##############################################################################################################################
 
 ##########
-#R CODE TO CALCULATE THE MEDIAN AGE FOR A GIVEN AGE PROFILE
-#EDDIE HUNSINGER, 2008
+#CALCULATE THE MEDIAN AGE FOR A GIVEN AGE PROFILE (EDDIE HUNSINGER, 2008)
 #http://www.demog.berkeley.edu/~eddieh/toolbox.html#MedianAge 
 source("https://raw.githubusercontent.com/AppliedDemogToolbox/Hunsinger_MedianAge/master/MedianAge.R")
 ##########
