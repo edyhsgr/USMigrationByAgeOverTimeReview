@@ -125,7 +125,7 @@ points(CPS18to79MoverRatesMedianAge[3:19],type="l",lwd="3",col="forestgreen")
 CPS18to79MoversMedianAge<-array(0,19)
 for (i in 1:length(CPS18to79MoversMedianAge)) {CPS18to79MoversMedianAge[i]<-medage(data.frame(CPSTotalMovers[19:80,i]),1)+18}
 points(CPS18to79MoversMedianAge[3:19],ylab="",xlab="",type="l",lty=3,lwd="3",col="forestgreen",ylim=c(25,40),panel.first=c(abline(h=c(30,35),col="grey50",lty=3)))
-title(c("Median Age of Moved in Last Year, Selected Age Groups","US, 2001 to 2017 Annual (ACS 1-Year)"),cex.main=.8)
+title(c("Median Age of Moved in Last Year, Selected Age Groups","US, 2001 to 2017 Annual (CPS ASEC)"),cex.main=.8)
 axis(side=1,at=1:17,labels=c("2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017"),las=2,cex.axis=0.75)
 axis(side=2,cex.axis=0.8)
 legend(.75,40,bg="white",legend=c("Ages 18 to 79 (Using age specific rates)", "Ages 18 to 79 (Using number of movers)", "Ages 18 to 49 (Using age specific rates)", "Ages 18 to 49 (Using number of movers)"), 
