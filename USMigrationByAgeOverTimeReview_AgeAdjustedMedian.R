@@ -44,7 +44,7 @@ col=c("grey75",rainbow(19)[8],rainbow(19)[14],rainbow(19)[19]),
 lwd=c(1,1,1,1), cex=.7)
 mtext(side=1,line=2,adj=.5,text="Age",font=1,cex=.75,col="black")
 mtext(side=2,line=2.5,adj=.5,text="Rate of Moved in Last Year",font=1,cex=.75,col="black")
-mtext(side=1,line=-12,adj=.5,text="(2001 to 2005 source data don't appear comparable to 2006 to 2017.)",font=1,cex=.6,col="black")
+mtext(side=1,line=-13,adj=.5,text="(2001 to 2005 source data don't appear comparable to 2006 to 2017.)",font=1,cex=.6,col="black")
 mtext(side=1,line=3,adj=0,text="Using US Census Bureau American Community Survey data",font=1,cex=.5,col="black")
 mtext(side=1,line=3.5,adj=0,text="from IPUMS-USA, University of Minnesota, www.ipums.org.",font=1,cex=.5,col="black")
 
@@ -64,7 +64,7 @@ legend(7,39,bg="white",legend=c("Ages 18 to 79", "Ages 18 to 49"),
 col=c("forestgreen","orange"), 
 lwd=c(3,3), cex=.7)
 mtext(side=1,line=2.5,adj=.5,text="Year",font=1,cex=.75,col="black")
-mtext(side=1,line=-12,adj=.5,text="(Age-Adjusted, Using 2017 Standard)",font=1,cex=.6,col="black")
+mtext(side=1,line=-13,adj=.5,text="(Age-Adjusted, Using 2017 Standard)",font=1,cex=.6,col="black")
 mtext(side=2,line=2.5,adj=.5,text="Median Age of Moved in Last Year",font=1,cex=.75,col="black")
 mtext(side=1,line=3.25,adj=0,text="Using US Census Bureau American Community Survey data",font=1,cex=.5,col="black")
 mtext(side=1,line=3.75,adj=0,text="from IPUMS-USA, University of Minnesota, www.ipums.org.",font=1,cex=.5,col="black")
@@ -112,13 +112,17 @@ legend(10,39,bg="white",legend=c("Ages 18 to 79", "Ages 18 to 49"),
 col=c("forestgreen","orange"), 
 lwd=c(3,3), cex=.7)
 mtext(side=1,line=2.5,adj=.5,text="Year",font=1,cex=.75,col="black")
-mtext(side=1,line=-12,adj=.5,text="(Age-Adjusted, Using 2017 Standard)",font=1,cex=.6,col="black")
+mtext(side=1,line=-13,adj=.5,text="(Age-Adjusted, Using 2017 Standard)",font=1,cex=.6,col="black")
 mtext(side=2,line=2.5,adj=.5,text="Median Age of Moved in Last Year",font=1,cex=.75,col="black")
 mtext(side=1,line=3.25,adj=0,text="Using US Bureau of Labor Statistics Current Population Survey data",font=1,cex=.5,col="black")
 mtext(side=1,line=3.75,adj=0,text="from IPUMS-USA, University of Minnesota, www.ipums.org.",font=1,cex=.5,col="black")
 ##########
 
 ##########
+#Set graph space
+dev.new(width=10, height=5, unit="in")
+par(mfrow=c(1,2))
+
 #Read in CPS mover data - 1963 to 2017
 CPSTotalMovers<-read.table(file="https://raw.githubusercontent.com/edyhsgr/USMigrationByAgeOverTimeReview/master/DataFromIPUMSCPS/CPSMoversTotal_1963to2017.csv",header=TRUE,sep=",")
 CPSTotalTotal<-read.table(file="https://raw.githubusercontent.com/edyhsgr/USMigrationByAgeOverTimeReview/master/DataFromIPUMSCPS/CPSTotalTotal_1963to2017.csv",header=TRUE,sep=",")
@@ -148,23 +152,23 @@ mtext(side=1,line=3.5,adj=0,text="from IPUMS-USA, University of Minnesota, www.i
 CPS18to49MoverRatesMedianAge<-array(0,57)
 CPSTotalMoversRate[is.na(CPSTotalMoversRate)] <- 0
 for (i in 1:length(CPS18to49MoverRatesMedianAge)) {CPS18to49MoverRatesMedianAge[i]<-medage(data.frame(CPSTotalMoversRate[19:50,i]*CPSTotalTotal[19:50,57]),1)+18}
-plot(CPS18to49MoverRatesMedianAge[20:57],ylab="",xlab="",axes=F,type="l",lwd="3",col="orange",ylim=c(25,40),panel.first=c(abline(h=c(30,35),col="grey50",lty=3)))
+plot(CPS18to49MoverRatesMedianAge[20:57],ylab="",xlab="",axes=F,type="l",lwd="5",col="orange",ylim=c(25,40),panel.first=c(abline(h=c(30,35),col="grey50",lty=3)))
 
 #Calculate and graph median age of 18 to 79 year old age adjusted migration rates (2017 standard) - 1980 to 2017
 CPS18to79MoverRatesMedianAge<-array(0,57)
 CPSTotalMoversRate[is.na(CPSTotalMoversRate)] <- 0
 for (i in 1:length(CPS18to79MoverRatesMedianAge)) {CPS18to79MoverRatesMedianAge[i]<-medage(data.frame(CPSTotalMoversRate[19:80,i]*CPSTotalTotal[19:80,57]),1)+18}
-points(CPS18to79MoverRatesMedianAge[20:57],type="l",lwd="3",col="forestgreen")
+points(CPS18to79MoverRatesMedianAge[20:57],type="l",lwd="5",col="forestgreen")
 axis(side=1,at=1:38,
-labels=c("1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017"),
+labels=c("1980","","","","","1985","","","","","1990","","","","","1995","","","","","2000","","","","","2005","","","","","2010","","","","","2015","","2017"),
 las=2,cex.axis=0.75)
 axis(side=2,cex.axis=0.8)
 title(c("Median Age of Moved in Last Year, Selected Age Groups","US, 1980 to 2017 Annual (CPS ASEC)"),cex.main=.8)
-legend(10,39,bg="white",legend=c("Ages 18 to 79", "Ages 18 to 49"), 
+legend(20,39,bg="white",legend=c("Ages 18 to 79", "Ages 18 to 49"), 
 col=c("forestgreen","orange"), 
 lwd=c(3,3), cex=.7)
 mtext(side=1,line=2.5,adj=.5,text="Year",font=1,cex=.75,col="black")
-mtext(side=1,line=-12,adj=.5,text="(Age-Adjusted, Using 2017 Standard)",font=1,cex=.6,col="black")
+mtext(side=1,line=-17,adj=.5,text="(Age-Adjusted, Using 2017 Standard)",font=1,cex=.75,col="black")
 mtext(side=2,line=2.5,adj=.5,text="Median Age of Moved in Last Year",font=1,cex=.75,col="black")
 mtext(side=1,line=3.25,adj=0,text="Using US Bureau of Labor Statistics Current Population Survey data",font=1,cex=.5,col="black")
 mtext(side=1,line=3.75,adj=0,text="from IPUMS-USA, University of Minnesota, www.ipums.org.",font=1,cex=.5,col="black")
