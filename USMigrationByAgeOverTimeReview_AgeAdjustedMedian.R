@@ -139,9 +139,9 @@ plot(CPSTotalMoversRate[2:81,20],ylab="",xlab="",ylim=c(0,.45),axes=F,type="l",l
 for (i in 20:57) {points(CPSTotalMoversRate[2:81,i],type="l",lwd="1",col=rainbow(60)[i])}
 axis(side=1,at=5*(0:81),las=2,cex.axis=0.75)
 axis(side=2,cex.axis=0.8)
-title(c("Age Specific Rates of Moved in Last Year","US, 1980 to 2017 Annual (CPS ASEC)"),cex.main=.8)
-legend(45,.42,bg="white",legend=c("1980", "1992", "2004", "2017"), 
-col=c(rainbow(60)[23],rainbow(60)[35],rainbow(60)[47],rainbow(60)[60]), 
+title(c("Age Specific Rates of Moved in Last Year","US, 1981 to 2017 Annual (CPS ASEC)"),cex.main=.8)
+legend(45,.42,bg="white",legend=c("1981", "1992", "2004", "2017"), 
+col=c(rainbow(60)[24],rainbow(60)[35],rainbow(60)[47],rainbow(60)[59]), 
 lwd=c(1,1,1,1), cex=.7)
 mtext(side=1,line=2,adj=.5,text="Age",font=1,cex=.75,col="black")
 mtext(side=2,line=2.5,adj=.5,text="Rate of Moved in Last Year",font=1,cex=.75,col="black")
@@ -163,7 +163,7 @@ axis(side=1,at=1:38,
 labels=c("1980","","","","","1985","","","","","1990","","","","","1995","","","","","2000","","","","","2005","","","","","2010","","","","","2015","","2017"),
 las=2,cex.axis=0.75)
 axis(side=2,cex.axis=0.8)
-title(c("Median Age of Moved in Last Year, Selected Age Groups","US, 1980 to 2017 Annual (CPS ASEC)"),cex.main=.8)
+title(c("Median Age of Moved in Last Year, Selected Age Groups","US, 1981 to 2017 Annual (CPS ASEC)"),cex.main=.8)
 legend(20,39,bg="white",legend=c("Ages 18 to 79", "Ages 18 to 49"), 
 col=c("forestgreen","orange"), 
 lwd=c(3,3), cex=.7)
